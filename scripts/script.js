@@ -108,8 +108,8 @@ function filter (catalog){
     $('input[type="button"]').click(()=>{
         if($('#sort').val() === 'Descending'){
             catalog.sort((a,b)=>{
-                let priceA = a.price
-                let priceB = b.price
+                let priceA = parseFloat(a.price)
+                let priceB = parseFloat(b.price)
                 if(priceA > priceB) return -1
                 else if (priceA < priceB) return 1
                 else return 0
@@ -124,8 +124,8 @@ function filter (catalog){
         else if($('#sort').val() === 'Ascending'){
             //$('main').empty()
             catalog.sort((a,b)=>{
-                let priceA = a.price
-                let priceB = b.price
+                let priceA = parseFloat(a.price)
+                let priceB = parseFloat(b.price)
                 if(priceA < priceB) return -1
                 else if (priceA > priceB) return 1
                 else return 0
